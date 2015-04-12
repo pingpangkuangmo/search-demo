@@ -1,0 +1,3 @@
+a,b,a.id=b.aId
+b,c,b.id=c.bId
+c,d,c.id=d.cId

@@ -1,3 +1,4 @@
+create database `search`;
 
 CREATE TABLE `search`.`a` (
   `id` INT NOT NULL AUTO_INCREMENT,

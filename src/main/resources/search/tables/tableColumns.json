@@ -1,0 +1,6 @@
+{
+	"a":["a.id","a.name","a.create_time as createTime"],
+	"b":["b.id","b.name","b.create_time as createTime","b.aId"],
+	"c":["c.id","c.name","c.create_time as createTime","c.bId"],
+	"d":["d.id","d.name","d.create_time as createTime","d.cId"]
+}
