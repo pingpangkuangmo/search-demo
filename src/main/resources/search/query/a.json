@@ -1,0 +1,14 @@
+{
+	"a-b":{
+		"entityColumns":["a","bs@listb"],
+		"tablesPath":"a join b"
+	},
+	"a-c":{
+		"entityColumns":["a","cs@listc"],
+		"tablesPath":"a join b join c"
+	},
+	"a-d":{
+		"entityColumns":["a","ds@listd"],
+		"tablesPath":"a join b join c join d"
+	}
+}
