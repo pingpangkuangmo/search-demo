@@ -3,10 +3,8 @@ package com.demo.controller;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +18,7 @@ import com.dboper.search.domain.QueryBody;
 @RestController
 public class SearchController implements InitializingBean{
 	
-	private final Log logger = LogFactory.getLog(getClass());
+	private final Logger logger=LoggerFactory.getLogger(getClass());
 	
 	FrameworkServlet asdas;
 	
@@ -32,11 +30,12 @@ public class SearchController implements InitializingBean{
 		if(logger.isDebugEnabled()){
 			logger.debug("debug");
 		}
+		logger.debug("debug");
 		if(logger.isInfoEnabled()){
 			logger.info("request api/search"+System.currentTimeMillis()+" info");
 		}
 		logger.warn("warn");
-		logger.error("error");
+		logger.error("errorggggggggggggggg");
 		return dbSearchService.select(q);
 	}
 
