@@ -118,6 +118,7 @@
 		<version>2.3.19</version>
 	</dependency>
 	
+	<!-- search -->
 	<dependency>
 		<groupId>com.dboper</groupId>
   		<artifactId>search-core</artifactId>
