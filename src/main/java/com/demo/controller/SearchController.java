@@ -1,6 +1,5 @@
 package com.demo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.InitializingBean;
@@ -43,14 +42,6 @@ public class SearchController implements InitializingBean{
 	@RequestMapping(value="api/search/action/{action}",method=RequestMethod.POST)
 	public List<Map<String,Object>> select(@PathVariable("action")String action,@RequestBody Map<String,Object> params){
 		return dbSearchService.select(action,params);
-	}
-	
-	@RequestMapping(value="api/test",method=RequestMethod.GET)
-	public List<Map<String,Object>> test(){
-		List<Object> arguments=new ArrayList<Object>();
-		arguments.add("'a1'");
-		System.out.println(arguments);
-		return jdbcTemplate.queryForList("select a.id,a.name from a where a.name=?",arguments.toArray());
 	}
 
 	@Override
