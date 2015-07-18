@@ -1,6 +1,18 @@
 {
-	"a":["a.id","a.name","a.create_time as createTime"],
-	"b":["b.id","b.name","b.create_time as createTime","b.aId"],
-	"c":["c.id","c.name","c.create_time as createTime","c.bId"],
-	"d":["d.id","d.name","d.create_time as createTime","d.cId"]
+	"a":{	
+			"mappingTableName":"a1",
+			"columns":["a.id","a.name","a.create_time as createTime"]
+	},
+	"b":{	
+			"mappingTableName":"b1",
+			"columns":["b.id","b.name","b.create_time as createTime","b.aId as baId"]
+	},
+	"c":{	
+			"mappingTableName":"c1",
+			"columns":["c.id","c.name","c.create_time as createTime","c.bId"]
+	},
+	"d":{	
+			"mappingTableName":"d1",
+			"columns":["d.id","d.name","d.create_time as createTime","d.cId"]
+	}
 }
