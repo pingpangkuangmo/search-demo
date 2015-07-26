@@ -2,9 +2,9 @@ package com.demo.controller;
 
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dboper.search.DBSearchService;
+import com.dboper.search.config.Configuration;
 import com.dboper.search.domain.QueryBody;
 import com.dboper.search.util.MapUtil;
 
@@ -21,7 +22,7 @@ public class SearchController implements InitializingBean{
 	@Autowired
 	private DBSearchService dbSearchService;
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	private Configuration config;
 
 	@RequestMapping(value="api/search")
 	public List<Map<String,Object>> select(@RequestBody QueryBody q){
@@ -46,6 +47,10 @@ public class SearchController implements InitializingBean{
 
 	@Override
 	public void afterPropertiesSet(){
+		config.setTablePrefix("cms_");
+		config.setQueryFileDirectory("search/query");
+		config.setTableColumnsDir("search/tables");
+		config.setBaseRelationFilesDir("search/baseRelation");
 		dbSearchService.init();
 	}
 }
